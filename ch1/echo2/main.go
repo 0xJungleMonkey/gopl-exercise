@@ -13,12 +13,11 @@ import (
 )
 
 func main() {
-	s, sep := "", ""
-	for _, arg := range os.Args[1:] {
-		s += sep + arg
-		sep = " "
+	//requirement: 打印每个参数的索引和值，每个一行。
+	for index, arg := range os.Args[1:] {
+		fmt.Println(index, arg)
 	}
-	fmt.Println(s)
+	
 }
 
 //!-
