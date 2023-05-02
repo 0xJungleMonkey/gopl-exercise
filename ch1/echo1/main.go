@@ -5,6 +5,7 @@
 //!+
 
 // Echo1 prints its command-line arguments.
+////// 在每个包的包声明前添加注释
 package main
 
 import (
@@ -13,8 +14,10 @@ import (
 )
 
 func main() {
+	//////声明变量， 初始化为zero value ""
 	var s, sep string
-	for i := 1; i < len(os.Args); i++ {
+	//////Go语言只有for循环
+	for i := 0; i < len(os.Args); i++ {
 		s += sep + os.Args[i]
 		sep = " "
 	}
