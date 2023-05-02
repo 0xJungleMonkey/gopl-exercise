@@ -8,13 +8,19 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
-	"strings"
+
+	"time"
 )
 
-//!+
+// !+
 func main() {
-	fmt.Println(strings.Join(os.Args[1:], " "))
+	start := time.Now()
+	fmt.Println(os.Args[1:])
+	elapsed := time.Since(start)
+	log.Printf("Binomial took %s", elapsed)
+
 }
 
 //!-

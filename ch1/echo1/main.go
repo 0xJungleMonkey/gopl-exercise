@@ -5,15 +5,18 @@
 //!+
 
 // Echo1 prints its command-line arguments.
-////// 在每个包的包声明前添加注释
+// //// 在每个包的包声明前添加注释
 package main
 
 import (
 	"fmt"
+	"log"
 	"os"
+	"time"
 )
 
 func main() {
+	start := time.Now()
 	//////声明变量， 初始化为zero value ""
 	var s, sep string
 	//////Go语言只有for循环
@@ -21,7 +24,11 @@ func main() {
 		s += sep + os.Args[i]
 		sep = " "
 	}
+
 	fmt.Println(s)
+	elapsed := time.Since(start)
+	log.Printf("Binomial took %s", elapsed)
+
 }
 
 //!-
