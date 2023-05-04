@@ -24,6 +24,7 @@ func main() {
 			fmt.Fprintf(os.Stderr, "dup3: %v\n", err)
 			continue
 		}
+		
 		for _, line := range strings.Split(string(data), "\n") {
 			counts[line]++
 		}
@@ -36,3 +37,4 @@ func main() {
 }
 
 //!-
+//////一口气把全部数据读取到内存中，一次分割为多行，然后处理他们。

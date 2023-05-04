@@ -13,18 +13,16 @@ import (
 	"image/color"
 	"image/gif"
 	"io"
+	"log"
 	"math"
 	"math/rand"
+	"net/http"
 	"os"
+	"time"
 )
 
 //!-main
 // Packages not needed by version in book.
-import (
-	"log"
-	"net/http"
-	"time"
-)
 
 //!+main
 
@@ -61,7 +59,7 @@ func lissajous(out io.Writer) {
 		cycles  = 5     // number of complete x oscillator revolutions
 		res     = 0.001 // angular resolution
 		size    = 100   // image canvas covers [-size..+size]
-		nframes = 64    // number of animation frames
+		nframes = 64     // number of animation frames
 		delay   = 8     // delay between frames in 10ms units
 	)
 	freq := rand.Float64() * 3.0 // relative frequency of y oscillator
@@ -84,3 +82,5 @@ func lissajous(out io.Writer) {
 }
 
 //!-main
+////// Run it: go build
+////// ./main > out.gif

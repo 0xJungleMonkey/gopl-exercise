@@ -32,7 +32,7 @@ func main() {
 	}
 	for line, n := range counts {
 		if n > 1 {
-			fmt.Printf("%d\t%s\n", n, line)
+			fmt.Printf("%d\t%s\t%v\n", n, line, files)
 		}
 	}
 }
@@ -40,9 +40,11 @@ func main() {
 func countLines(f *os.File, counts map[string]int) {
 	input := bufio.NewScanner(f)
 	for input.Scan() {
+
 		counts[input.Text()]++
 	}
 	// NOTE: ignoring potential errors from input.Err()
 }
 
 //!-
+//////前两个版本以流模式读取输入，并根据需要拆分成多个行。 理论上，这些程序可以处理任意数量的输入数据。
