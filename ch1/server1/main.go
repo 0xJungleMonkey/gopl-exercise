@@ -5,6 +5,7 @@
 //!+
 
 // Server1 is a minimal "echo" server.
+// 只用了八九行代码就实现了一个web服务程序，这都是多亏了标准库里的方法已经帮我们完成了大量的工作。main函数将所有发送到/路径下的请求和handler函数关联起来。
 package main
 
 import (
