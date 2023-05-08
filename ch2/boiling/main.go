@@ -9,7 +9,7 @@ package main
 
 import "fmt"
 
-const boilingF = 212.0
+const boilingF = 212.0//在包一级范围声明语句，可在整个包对应的每个源文件中访问。
 
 func main() {
 	var f = boilingF
